@@ -402,7 +402,6 @@ class BackupService {
             );
 
             baseRequest.headers.addAll(ApiService.getRequestHeaders());
-            baseRequest.headers["Transfer-Encoding"] = "chunked";
             baseRequest.files.add(assetRawUploadData);
 
             final response = await httpClient.send(
@@ -428,7 +427,6 @@ class BackupService {
           );
 
           baseRequest.headers.addAll(ApiService.getRequestHeaders());
-          baseRequest.headers["Transfer-Encoding"] = "chunked";
           baseRequest.fields['deviceAssetId'] = asset.localId!;
           baseRequest.fields['deviceId'] = deviceId;
           baseRequest.fields['fileCreatedAt'] =
